@@ -1,0 +1,27 @@
+{
+  "name": "mmall-fe",
+  "version": "1.0.0",
+  "description": "前端学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duoduo93/mmall-fe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duoduo93/mmall-fe/issues"
+  },
+  "homepage": "https://github.com/duoduo93/mmall-fe#readme",
+  "devDependencies": {
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.0.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {}
+}
