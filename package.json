@@ -2,7 +2,7 @@
   "name": "mmall-fe",
   "version": "1.0.0",
   "description": "前端学习",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/duoduo93/mmall-fe#readme",
   "devDependencies": {
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.0.4",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
-  "dependencies": {}
+  "scripts":{
+    "build":"webpack",
+    "dev":"webpack-dev-server"
+  }
 }

@@ -1,73 +1,20 @@
-var path = require("path");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-// module.exports = {
-// 	entry :'./src/page/index/index.js',
-// 	output:{
-// 		path:path.resolve(__dirname,'./dist'),
-// 		filename:'app.js'
-// 	}
-// };
 
-// var webpack = require('webpack');
-//获取html-webpack-plugin参数的方法
-var getHtmlConfig = function(name){
-	return {
-			template :'./src/view/'+'.html',
-			filename:'view/'+name+'.html',
-			inject:true,
-			hash:true,
-			trunks:['common',name]
-	}
-};
-var config = {
-	entry:{
-		'index':['./src/page/index/index.js'],
-		'login':['./src/page/login/login.js']
+var webpack = require('webpack');
+//__dirname是node.js中的一个全局变量，它指向当前执行脚本的所在目录
+module.exports = {
+	entry:__dirname+"/src/main.js",//唯一入口文件
+	output:{//输出目录
+		path: __dirname+'/build',//打包后的js文件存放的地方
+		filename:'bundle.js'//打包后输出的js文件名
 	},
-	output:{
-		path:path.resolve(__dirname,'./dist'),
-		// filename:'app.js'
-		// filename:'[name].js'//打包成原文件名.js
-		filename:'js/[name].js'//指定打包文件输出路径
-	},
-	externals:{
-		'jquery':'window.jQuery'
-	},
-	// plugins: [
-	// 	new webpack.optimization.splitChunks({
-	// 		name : 'commons',
-	// 		filename : 'js/base.js'
-	// 	})
-	// ]
-	// 独立打包通用模块
-	optimization:{
-		splitChunks:{
-			cacheGroups:{
-				commons:{
-					name:'commons',
-					chunks:'initial',
-					minChunks:2
-					// filename:'js/base.js'
-				}
-			}
-		}
+	//webpack-dev-server配置
+	devServer: {
+		contentBase:'./build',//默认webpack-dev-server会为根文件夹提供本地服务器，自定义目录为./build
+		historyApiFallback:true,//在开发单页应用的时候非常有用，它依赖于HTML6 historyAPI 如果设置为true,所有的跳转都执行index.html
+		port:80//设置默认端口号，如果省略，默认为8080
 	},
 	plugins:[
-		//把css单独打包到文件里
-		new ExtractTextPlugin('css/[name].css'),
-		//html模板的处理
-		// new HtmlWebpackPlugin({
-		// 	template :'./src/view/index.html',
-		// 	filename:'view/index.html',
-		// 	inject:true,
-		// 	hash:true,
-		// 	trunks:['common','index']
-		// }) 
-
+		new webpack.HotModuleReplacementPlugin()//热模块替换插件
 	]
-	
-		
-	
+
 };
-module.exports = config;
