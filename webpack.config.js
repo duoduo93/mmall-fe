@@ -1,20 +1,149 @@
+/*
+* @Author: WangXianPeng
+* @Date:   2020-04-08 16:45:10
+* @Last Modified by:   Wang XianPeng
+* @Last Modified time: 2020-04-09 02:48:28
+* @Email:   1742759884@qq.com
+*/
 
+//打包前删除掉dist目录
+// const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+
+//处理公用的js
 var webpack = require('webpack');
-//__dirname是node.js中的一个全局变量，它指向当前执行脚本的所在目录
-module.exports = {
-	entry:__dirname+"/src/main.js",//唯一入口文件
-	output:{//输出目录
-		path: __dirname+'/build',//打包后的js文件存放的地方
-		filename:'bundle.js'//打包后输出的js文件名
+//加载css打包插件
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+//处理html模板
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+
+
+//获取html-webpack-plugin参数的方法
+var getHtmlConfig = function(name){
+	return {
+			template : './src/view/'+name+'.html',
+			filename : 'view/'+name+'.html',
+			inject   : true,
+			hash     :true,
+			chunks   :['common',name]
+	};
+};
+
+
+
+//webpack config
+var config = module.exports = {
+	// entry : './src/page/index/index.js',//单一入口
+	entry: {
+		'index' : ['./src/page/index/index.js'],
+		'loign' : ['./src/page/login/login.js']
 	},
-	//webpack-dev-server配置
-	devServer: {
-		contentBase:'./build',//默认webpack-dev-server会为根文件夹提供本地服务器，自定义目录为./build
-		historyApiFallback:true,//在开发单页应用的时候非常有用，它依赖于HTML6 historyAPI 如果设置为true,所有的跳转都执行index.html
-		port:80//设置默认端口号，如果省略，默认为8080
+	output: {
+		path:__dirname+ '/dist',
+		filename: 'js/[name].js',
+		// publicPath : '/',
+		// chunkFilename: '[name].js'
+		// hash:true
 	},
-	plugins:[
-		new webpack.HotModuleReplacementPlugin()//热模块替换插件
-	]
+	//加载外部模块
+	externals: {
+		'jquery' :'window.jQuery'
+	},
+	devServer : {
+		historyApiFallback: true,
+		inline : true,
+	},
+	plugins: [
+		//抽取公共js
+		//已经过时了，替换成splitChunks里执行
+		// new webpack.optimize.CommonsChunkPlugin({
+		// 	name : 'commons',
+		// 	filename : 'js/base.js'
+		// })
+		
+		//热更新插件
+		new webpack.HotModuleReplacementPlugin(),
+		//抽取css文件
+		new ExtractTextPlugin("css/[name].css"),
+
+		//通过方法处理多个html页面
+		new HtmlWebpackPlugin(getHtmlConfig('index')),
+		new HtmlWebpackPlugin(getHtmlConfig('login')),
+		//清楚dist文件夹
+		// new CleanWebpackPlugin(),
+		
+		// new HtmlWebpackPlugin({
+		// 	template : './src/view/index.html',
+		// 	filename : 'view/index.html',
+		// 	inject   : true,
+		// 	hash     :true,
+		// 	chunks   :['common','index']
+		// }),
+	],
+	module :{
+		rules: [
+			{   //css打包
+				test :/\.css$/,
+				// loader :"style-loader!css-loader"//加载顺序从右往左
+				use: ExtractTextPlugin.extract({
+					fallback :"style-loader",
+					use:"css-loader"
+				})
+			},
+			{   //图片打包
+				test :/\.png|jpg|jpeg|gif$/,
+				// loader :"style-loader!css-loader"//加载顺序从右往左
+				use: [
+					{
+						loader:"url-loader",
+						options: {
+							name :"[name]-[hash:5].min.[ext]",
+							limit:20000,//size<=20kb
+							publicPath: "static/",
+							outputPath: "static/"
+
+						}
+					},
+					{	//图片压缩
+						loader:"img-loader",
+						options: {
+							plugins : [
+								require("imagemin-pngquant")({
+									quality: "80" //the quality of zip
+								})
+							]
+						}
+					},
+				]
+			}
+		],
+		// plugins:[ExtractTextPlugin]
+	},
+
+	 optimization: {
+	    splitChunks: {
+	      chunks:'initial',//只对入口文件处理
+	      cacheGroups: {
+	            commons: {
+	            	test:/common\//,
+		          name: 'commons',//打包后的文件名
+		          chunks: 'initial',
+		          minChunks: 2,//重复2次才能打包到此模块
+		     	}
+		     	// commons: {
+		      //     name: 'commons',//打包后的文件名
+		      //     chunks: 'initial',
+		      //     minChunks: 2,//重复2次才能打包到此模块
+		     	// },
+        		
+
+      	  }
+
+	    }
+	 }
+
+
+
 
 };
+
+module.exports = config;
