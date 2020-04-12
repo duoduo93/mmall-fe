@@ -2,14 +2,14 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-08 19:55:29
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-09 02:49:43
+* @Last Modified time: 2020-04-12 02:50:22
 * @Email:   1742759884@qq.com
 */
 /*base.css*/
 body{
 	margin: 0;
 	padding: 0;
-	background: #000;
+	background: #ccc;
 
 }
 .box {
@@ -26,13 +26,22 @@ body{
 p{
 	color: red;
 }
-/*
+
 .box ani1{
-	background: url("./../../assets/imgs/1.png") no-repeat;
+	width: 200px;
+	height: 300px;
+	background : url("/imgs/1.png")no-repeat;
 }
 .box ani2{
-	background: url("./../../assets/imgs/2.png") no-repeat;
+
+	width: 200px;
+	height: 300px;
+	background: url("/imgs/2.png")no-repeat;
+	
 }
 .box ani3{
-	background: url("./../../assets/imgs/3.png") no-repeat;
-}*/
+	width: 200px;
+	height: 300px;
+	background: url("/imgs/3.png")no-repeat;
+	
+}

@@ -2,31 +2,33 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-09 02:48:28
+* @Last Modified time: 2020-04-12 12:20:50
 * @Email:   1742759884@qq.com
 */
 
 //打包前删除掉dist目录
-// const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
+const path = require('path');
 //处理公用的js
-var webpack = require('webpack');
+const webpack = require('webpack');
 //加载css打包插件
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //处理html模板
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 //获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name){
 	return {
 			template : './src/view/'+name+'.html',
-			filename : 'view/'+name+'.html',
+			filename : 'view/'+name+'.[hash:8].html',
 			inject   : true,
 			hash     :true,
-			chunks   :['common',name]
+			chunks   :[name,'commons']
 	};
 };
+
 
 
 
@@ -35,11 +37,11 @@ var config = module.exports = {
 	// entry : './src/page/index/index.js',//单一入口
 	entry: {
 		'index' : ['./src/page/index/index.js'],
-		'loign' : ['./src/page/login/login.js']
+		'login' : ['./src/page/login/login.js']
 	},
 	output: {
-		path:__dirname+ '/dist',
-		filename: 'js/[name].js',
+		path:path.resolve(__dirname,'dist'),
+		filename: 'js/[name].[hash:8].js',
 		// publicPath : '/',
 		// chunkFilename: '[name].js'
 		// hash:true
@@ -53,31 +55,18 @@ var config = module.exports = {
 		inline : true,
 	},
 	plugins: [
-		//抽取公共js
-		//已经过时了，替换成splitChunks里执行
-		// new webpack.optimize.CommonsChunkPlugin({
-		// 	name : 'commons',
-		// 	filename : 'js/base.js'
-		// })
-		
+
 		//热更新插件
 		new webpack.HotModuleReplacementPlugin(),
 		//抽取css文件
-		new ExtractTextPlugin("css/[name].css"),
+		new ExtractTextPlugin("css/[name].[hash:8].css"),
 
 		//通过方法处理多个html页面
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('login')),
 		//清楚dist文件夹
-		// new CleanWebpackPlugin(),
-		
-		// new HtmlWebpackPlugin({
-		// 	template : './src/view/index.html',
-		// 	filename : 'view/index.html',
-		// 	inject   : true,
-		// 	hash     :true,
-		// 	chunks   :['common','index']
-		// }),
+		new CleanWebpackPlugin(),
+				
 	],
 	module :{
 		rules: [
@@ -90,56 +79,54 @@ var config = module.exports = {
 				})
 			},
 			{   //图片打包
-				test :/\.png|jpg|jpeg|gif$/,
+				test :/\.(png|jpg|jpeg|gif)$/,
 				// loader :"style-loader!css-loader"//加载顺序从右往左
 				use: [
 					{
 						loader:"url-loader",
 						options: {
-							name :"[name]-[hash:5].min.[ext]",
-							limit:20000,//size<=20kb
-							publicPath: "static/",
-							outputPath: "static/"
+							name :"[name].[hash:8].[ext]",
+							limit:2048,//size<=20kb
+							publicPath: "./src/assets/",
+							outputPath: 'img/',
 
 						}
 					},
 					{	//图片压缩
-						loader:"img-loader",
+						loader:"image-webpack-loader",
 						options: {
-							plugins : [
-								require("imagemin-pngquant")({
-									quality: "80" //the quality of zip
-								})
-							]
+							bypassOnDebug:true,
 						}
-					},
+					}
 				]
-			}
+			},
+			// {   
+			// 	test :/\.html$/,
+			// 	// loader :"style-loader!css-loader"//加载顺序从右往左
+			// 	use: [{
+			// 		loader:'html-loader',
+			// 		options :{
+			// 			minimize:true,
+			// 		}
+			// 	}]
+			// },
 		],
-		// plugins:[ExtractTextPlugin]
+		
 	},
 
-	 optimization: {
-	    splitChunks: {
-	      chunks:'initial',//只对入口文件处理
-	      cacheGroups: {
-	            commons: {
-	            	test:/common\//,
-		          name: 'commons',//打包后的文件名
-		          chunks: 'initial',
-		          minChunks: 2,//重复2次才能打包到此模块
-		     	}
-		     	// commons: {
-		      //     name: 'commons',//打包后的文件名
-		      //     chunks: 'initial',
-		      //     minChunks: 2,//重复2次才能打包到此模块
-		     	// },
-        		
-
-      	  }
-
-	    }
-	 }
+	optimization: {
+        splitChunks: {
+            cacheGroups: {
+                //打包公共模块
+                commons: {
+                    chunks: 'initial', //initial表示提取入口文件的公共部分
+                    minChunks: 2, //表示提取公共部分最少的文件数
+                    minSize: 0, //表示提取公共部分最小的大小
+                    name: 'commons' //提取出来的文件命名
+                }
+            }
+        }
+    }
 
 
 
