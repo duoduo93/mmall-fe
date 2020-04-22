@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-12 12:20:50
+* @Last Modified time: 2020-04-22 13:16:37
 * @Email:   1742759884@qq.com
 */
 
@@ -65,7 +65,7 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('login')),
 		//清楚dist文件夹
-		new CleanWebpackPlugin(),
+		// new CleanWebpackPlugin(),
 				
 	],
 	module :{
@@ -81,35 +81,15 @@ var config = module.exports = {
 			{   //图片打包
 				test :/\.(png|jpg|jpeg|gif)$/,
 				// loader :"style-loader!css-loader"//加载顺序从右往左
-				use: [
-					{
-						loader:"url-loader",
-						options: {
-							name :"[name].[hash:8].[ext]",
-							limit:2048,//size<=20kb
-							publicPath: "./src/assets/",
-							outputPath: 'img/',
+				// loader: 'file-loader',
+				loader: 'url-loader',
+				options: {
+					name:'images/[name].[ext]',
+					limit: 8192
+				}
 
-						}
-					},
-					{	//图片压缩
-						loader:"image-webpack-loader",
-						options: {
-							bypassOnDebug:true,
-						}
-					}
-				]
 			},
-			// {   
-			// 	test :/\.html$/,
-			// 	// loader :"style-loader!css-loader"//加载顺序从右往左
-			// 	use: [{
-			// 		loader:'html-loader',
-			// 		options :{
-			// 			minimize:true,
-			// 		}
-			// 	}]
-			// },
+		
 		],
 		
 	},
@@ -126,7 +106,8 @@ var config = module.exports = {
                 }
             }
         }
-    }
+    },
+    // watch = true
 
 
 
