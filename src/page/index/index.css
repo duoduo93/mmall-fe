@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-08 19:55:29
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-22 12:51:38
+* @Last Modified time: 2020-04-23 16:22:51
 * @Email:   1742759884@qq.com
 */
 /*base.css*/
@@ -28,5 +28,5 @@ p{
 }
 
 html{
-	height: 100%;background: url("../../assets/imgs/1.jpg");
+	height: 100%;background: url("../../images/2.jpg");
 }

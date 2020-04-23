@@ -2,26 +2,40 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 17:38:52
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 05:52:02
+* @Last Modified time: 2020-04-23 16:49:17
 * @Email:   1742759884@qq.com
 */
 
  -->
  <!DOCTYPE html>
- <html>
- <%=require('html-loader!./layout/html-head.html')%>
+ <html lang="en">
+ 	<head>
+ 		 <%= require('html-loader!./layout/head-common.html')%>
+ 	<title>happymmall电商平台</title>
+ 	
+ </head>
+
     <script src="bundle.js" charset="utf-8"></script>
 
  <body>
- 	<div class="box">
- 		<div class="ani1"></div>
- 		<div class="ani2"></div>
- 		<div class="ani3"></div>
- 		<!-- <p>nihao</p>1112222333333 -->
- 		
+
+
+ 	<div>
+ 		<i class="fa fa-user"></i>
  	</div>
- 	你是风儿我是沙，潺潺流水好的
- 	
+ 	<!-- <div>
+ 		<a class="link">test</a>
+ 		<a class="link-text">test</a>
+ 	</div>
+ 	<div>
+ 		<a class="btn">test</a>
+ 		<a class=" btn btn-mini">test</a>
+ 	</div>
+ 	<div>
+ 		<div class="loading"></div>
+ 	</div>
+ -->
+ 
  	<%= require('html-loader!./layout/footer.html')%>
  </body>
  </html>

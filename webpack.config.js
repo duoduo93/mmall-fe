@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 08:32:40
+* @Last Modified time: 2020-04-23 17:57:31
 * @Email:   1742759884@qq.com
 */
 
@@ -37,7 +37,7 @@ var config = module.exports = {
 	// entry : './src/page/index/index.js',//单一入口
 	entry: {
 		'index' : ['./src/page/index/index.js'],
-		'login' : ['./src/page/login/login.js']
+		'login' : ['./src/page/login/login.js'],
 	},
 	output: {
 		path:path.resolve(__dirname,'dist'),
@@ -95,6 +95,10 @@ var config = module.exports = {
 				}
 
 			},
+			{
+				test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
+				loader: 'file-loader?name=fonts/[name].[ext]',
+			}
 		
 		],
 		
@@ -116,11 +120,11 @@ var config = module.exports = {
     //配置别名
     resolve : {
     	alias : {
-    		util : __dirname +"/src/util",
-    		page : __dirname +"/src/page",
-    		images : __dirname +"/src/images",
+    		util    : __dirname +"/src/util",
+    		page    : __dirname +"/src/page",
+    		images  : __dirname +"/src/images",
     		service : __dirname +"/src/service",
-
+    		node_modules   : __dirname +"/node_modules",
     	}
     },
     // watch = true
