@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-22 13:16:37
+* @Last Modified time: 2020-04-23 08:32:40
 * @Email:   1742759884@qq.com
 */
 
@@ -22,7 +22,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 var getHtmlConfig = function(name){
 	return {
 			template : './src/view/'+name+'.html',
-			filename : 'view/'+name+'.[hash:8].html',
+			filename : 'view/'+name+'.html',
 			inject   : true,
 			hash     :true,
 			chunks   :[name,'commons']
@@ -42,6 +42,10 @@ var config = module.exports = {
 	output: {
 		path:path.resolve(__dirname,'dist'),
 		filename: 'js/[name].[hash:8].js',
+		
+
+
+		// filename: 'bundle.js',
 		// publicPath : '/',
 		// chunkFilename: '[name].js'
 		// hash:true
@@ -53,11 +57,13 @@ var config = module.exports = {
 	devServer : {
 		historyApiFallback: true,
 		inline : true,
+		hot : true,
+		port : 8080,
 	},
 	plugins: [
 
 		//热更新插件
-		new webpack.HotModuleReplacementPlugin(),
+		 new webpack.HotModuleReplacementPlugin(),
 		//抽取css文件
 		new ExtractTextPlugin("css/[name].[hash:8].css"),
 
@@ -106,6 +112,16 @@ var config = module.exports = {
                 }
             }
         }
+    },
+    //配置别名
+    resolve : {
+    	alias : {
+    		util : __dirname +"/src/util",
+    		page : __dirname +"/src/page",
+    		images : __dirname +"/src/images",
+    		service : __dirname +"/src/service",
+
+    	}
     },
     // watch = true
 
