@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:54:19
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 16:35:41
+* @Last Modified time: 2020-04-23 18:20:30
 * @Email:   1742759884@qq.com
 */
 // var cats = require('./cats.js');
@@ -39,9 +39,9 @@ require('node_modules/font-awesome/css/font-awesome.min.css');
 // console.log(_ss.getServerUrl('./test123'));
 
 
-var html = '<div>{{data}}</div>';
-var data = {
-	data :'test12334hfgdfhgdh'
-};
+// var html = '<div>{{data}}</div>';
+// var data = {
+// 	data :'test12334hfgdfhgdh'
+// };
 
-console.log(_ss.renderHtml(html,data));
+// console.log(_ss.renderHtml(html,data));

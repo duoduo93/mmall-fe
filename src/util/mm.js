@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 04:51:05
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 14:49:28
+* @Last Modified time: 2020-04-23 18:12:40
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -83,7 +83,7 @@ var _mm = {
 	doLogin : function(){
 		//封装doLogin
 		//完全编码  encodeURIComponent
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 
 	},
 	goHome : function(){

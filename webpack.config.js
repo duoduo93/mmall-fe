@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 17:57:31
+* @Last Modified time: 2020-04-29 16:19:50
 * @Email:   1742759884@qq.com
 */
 
@@ -36,8 +36,11 @@ var getHtmlConfig = function(name){
 var config = module.exports = {
 	// entry : './src/page/index/index.js',//单一入口
 	entry: {
+		'common' : ['./src/page/common/index.js'],
 		'index' : ['./src/page/index/index.js'],
-		'login' : ['./src/page/login/login.js'],
+		'result' : ['./src/page/result/index.js'],
+		'user-login' : ['./src/page/user-login/login.js'],
+		'user-register' : ['./src/page/user-register/register.js'],
 	},
 	output: {
 		path:path.resolve(__dirname,'dist'),
@@ -50,6 +53,7 @@ var config = module.exports = {
 		// chunkFilename: '[name].js'
 		// hash:true
 	},
+	devtool : 'inline-source-map', //加载对应配置
 	//加载外部模块
 	externals: {
 		'jquery' :'window.jQuery'
@@ -68,8 +72,12 @@ var config = module.exports = {
 		new ExtractTextPlugin("css/[name].[hash:8].css"),
 
 		//通过方法处理多个html页面
-		new HtmlWebpackPlugin(getHtmlConfig('index')),
-		new HtmlWebpackPlugin(getHtmlConfig('login')),
+		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+		new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+		
+		
 		//清楚dist文件夹
 		// new CleanWebpackPlugin(),
 				
@@ -91,14 +99,21 @@ var config = module.exports = {
 				loader: 'url-loader',
 				options: {
 					name:'images/[name].[ext]',
-					limit: 8192
+					limit: 50000
 				}
 
 			},
 			{
 				test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
-				loader: 'file-loader?name=fonts/[name].[ext]',
+				loader: 'file-loader?name=/dist/fonts/[name].[ext]',
 			}
+
+			// {
+			// 	test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+			//  	loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+			//  	// loader: 'url-loader?limit=50000&name=/dist/fonts/[name].[ext]'
+
+			// }
 		
 		],
 		
