@@ -2,13 +2,13 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 18:20:54
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-30 10:32:50
+* @Last Modified time: 2020-05-01 10:12:53
 * @Email:   1742759884@qq.com
 */
 /*最外层容器*/
 .page-wrap{
 	padding: 40px 0;
-	background: #e72955;
+	/*background: #e72955;*/
 }
 
 /*表单登录框*/
@@ -49,10 +49,19 @@
 	font-size: 14px;
 	margin-top: -7px;
 }
-
+/*输入框容器*/
+.user-con .step-con{
+	display: none;/*隐藏提交按钮样式  在需要的时候通过Js显示出来*/
+}
+/*输入框提示信息*/
 .user-con .user-item{
 	position: relative;
 	margin-bottom: 20px;
+}
+.user-con .user-item-text{
+	margin-bottom: 10px;
+	font-size: 14px;
+
 }
 .user-con .user-item .user-label{
 	position: absolute;
@@ -86,6 +95,13 @@
 .user-con .link-item{
 	text-align: right;
 	margin-top: 10px;
+}
+.user-con .link-item-text{
+	/*text-align: right;*/
+	/*margin-top: 10px;*/
+
+	margin-bottom: 10px;
+	font-size: 14px;
 }
 .user-con .link-item .link{
 	margin-left: 10px;

@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 15:35:13
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 16:30:01
+* @Last Modified time: 2020-05-05 11:19:34
 * @Email:   1742759884@qq.com
 */
 /*css reset*/
@@ -35,6 +35,21 @@ input[type='checkbox']{
 	margin: 0 auto;/*居中*/
 	position: relative;
 	overflow: hidden;/*清除浮动 超区域不显示*/
+}
+
+/*panel*/
+.panel{
+	padding : 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+.panel .panel-title{
+	padding : 10px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+
 }
 .large .w{
 	width: 1600px;/*增大屏幕宽度*/

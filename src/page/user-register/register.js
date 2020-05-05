@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-26 16:03:12
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-29 15:40:33
+* @Last Modified time: 2020-04-30 11:03:40
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -37,11 +37,18 @@ var page ={
 		var _this = this;
 		//验证username
 		$('#username').blur(function(){
+			//this指的是$('#username')  val()  取值
 			var username = $.trim($(this).val());
+
+			if(!username){
+				return ;
+			}
 			//异步验证用户名是否存在
 			_user.checkUsername(username,function(res){
+				//验证成功，隐藏掉错误
 				formError.hide();
 			},function(errMsg){
+				//失败 ，显示错误
 				formError.show(errMsg);
 			}
 			);
@@ -63,14 +70,14 @@ var page ={
 		var formData = {
 			username            : $.trim($('#username').val()),
 			password            : $.trim($('#password').val()),
-			passwordConfirm     : $.trim($('#passwordConfirm').val()),
+			passwordConfirm     : $.trim($('#password-confirm').val()),
 			phone               : $.trim($('#phone').val()),
 			email               : $.trim($('#email').val()),
 			question            : $.trim($('#question').val()),
 			answer              : $.trim($('#answer').val())
 
-		};
-		validataResult = this.formValidate(formData);
+			},
+			validataResult = this.formValidate(formData);
 		if (validataResult.status){
 			//提交
 			_user.register(formData,function(res){
@@ -126,12 +133,12 @@ var page ={
 			return result;
 		}
 		//验证密码提示问题不能为空
-		if (!_mm.validate(formData.question,'question')) {
-			result.msg = '密码提示问题不能为空';
+		if (!_mm.validate(formData.question,'require')) {
+			result.msg = '密码问题不能为空';
 			return result;
 		}
 		//验证密码提示问题答案不能为空
-		if (!_mm.validate(formData.answer,'answer')) {
+		if (!_mm.validate(formData.answer,'require')) {
 			result.msg = '提示问题答案不能为空';
 			return result;
 		}

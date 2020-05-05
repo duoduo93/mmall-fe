@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-29 16:19:50
+* @Last Modified time: 2020-05-05 10:23:03
 * @Email:   1742759884@qq.com
 */
 
@@ -36,11 +36,14 @@ var getHtmlConfig = function(name){
 var config = module.exports = {
 	// entry : './src/page/index/index.js',//单一入口
 	entry: {
-		'common' : ['./src/page/common/index.js'],
-		'index' : ['./src/page/index/index.js'],
-		'result' : ['./src/page/result/index.js'],
-		'user-login' : ['./src/page/user-login/login.js'],
-		'user-register' : ['./src/page/user-register/register.js'],
+		'common'             : ['./src/page/common/index.js'],
+		'index'              : ['./src/page/index/index.js'],
+		'result'             : ['./src/page/result/index.js'],
+		'user-login'         : ['./src/page/user-login/login.js'],
+		'user-register'      : ['./src/page/user-register/register.js'],
+		'user-pass-reset'    : ['./src/page/user-pass-reset/reset.js'],
+		'user-center'        : ['./src/page/user-center/index.js'],
+		'user-center-update' : ['./src/page/user-center-update/index.js'],
 	},
 	output: {
 		path:path.resolve(__dirname,'dist'),
@@ -76,6 +79,9 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-center','用户个人中心')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','个人信息更新')),
 		
 		
 		//清楚dist文件夹
@@ -106,7 +112,8 @@ var config = module.exports = {
 			{
 				test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
 				loader: 'file-loader?name=/dist/fonts/[name].[ext]',
-			}
+			},
+			{ test: /\.string$/, loader:'html-loader'}
 
 			// {
 			// 	test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,

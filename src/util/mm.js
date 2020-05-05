@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 04:51:05
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 18:12:40
+* @Last Modified time: 2020-05-04 15:46:15
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -12,6 +12,7 @@ var conf = {
 	serverHost :''
 };
 var _mm = {
+	//网络请求
 	request : function(param){
 		var _this = this;
 		$.ajax({
@@ -89,13 +90,12 @@ var _mm = {
 	goHome : function(){
 		window.location.href = './index.html';
 	},
-	//渲染html模板(编译渲染一步到位)
-	renderHtml : function(htmlTemplate,data){
-		var template = Hogan.compile(htmlTemplate),
-		    result = template.render(data);
-		return result;
-	},
-
+// 渲染html模板
+    renderHtml : function(htmlTemplate, data){
+        var template    = Hogan.compile(htmlTemplate),
+            result      = template.render(data);
+        return result;
+    }
 
 
 };

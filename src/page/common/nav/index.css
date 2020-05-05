@@ -1,0 +1,32 @@
+/*
+* @Author: Wang XianPeng
+* @Date:   2020-05-03 11:04:38
+* @Last Modified by:   Wang XianPeng
+* @Last Modified time: 2020-05-03 11:08:13
+* @Email:   1742759884@qq.com
+*/
+.nav{
+	background: #eee;
+	height: 30px;
+	line-height: 30px;
+}
+
+/*用户部分*/
+.nav .user{
+	float: left;
+}
+.nav .user.login{
+	display: none;
+}
+.nav .user .link{
+	margin-right: 5px;
+}
+
+/*导航链接部分*/
+.nav .nav-list{
+	float: right;
+}
+.nav .nav-list .nav-item{
+	display: inline-block;
+	margin-left: 5px;
+}
