@@ -1,118 +1,23 @@
 /*
 * @Author: Wang XianPeng
-* @Date:   2020-05-05 15:24:33
+* @Date:   2020-04-08 19:55:29
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 15:25:20
+* @Last Modified time: 2020-05-05 16:28:50
 * @Email:   1742759884@qq.com
 */
-/*
-* @Author: Wang XianPeng
-* @Date:   2020-04-23 18:20:54
-* @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-01 10:12:53
-* @Email:   1742759884@qq.com
-*/
-/*最外层容器*/
-.page-wrap{
-	padding: 40px 0;
-	/*background: #e72955;*/
-}
-
-/*表单登录框*/
-.user-con{
-	position: relative;
-	margin : 0 auto;
-	width: 400px;
-	background: #fff;
-}
-.user-con .user-title{
-	text-align: center;
-	padding: 10px 0;
-	border-bottom: 1px solid #ddd;
-	font-size: 18px;
-	font-weight: bold;
-	color: #666;
-}
-.user-con .user-box{
-	padding: 20px;
-}
-/*错误提示框*/
-.user-con .user-box .error-item{
-	position: relative;
-	padding: 4px 0 4px 40px;
-	margin-bottom: 10px;
-	border: red;
-	color: red;
-	background: #fde9e9;
-	border: 1px solid red;
-	display: none;/*消除默认错误样式*/
-}
-
-/*错误图标*/
-.user-con .user-box .error-icon{
-	position: absolute;
-	left: 14px;
-	top: 50%;
+.form-line{
+	height: 30px;
+	line-height: 30px;
 	font-size: 14px;
-	margin-top: -7px;
-}
-/*输入框容器*/
-.user-con .step-con{
-	display: none;/*隐藏提交按钮样式  在需要的时候通过Js显示出来*/
-}
-/*输入框提示信息*/
-.user-con .user-item{
-	position: relative;
-	margin-bottom: 20px;
-}
-.user-con .user-item-text{
 	margin-bottom: 10px;
-	font-size: 14px;
-
 }
-.user-con .user-item .user-label{
-	position: absolute;
-	left: 1px;
-	top: 1px;
-	bottom: 1px;
-	width: 40px;
-	line-height: 36px;
-	font-size: 18px;
-	color: #d3d3d3;
+.form-line .label{
+	display: inline-block;
+	width: 80px;  /*不生效是因为span没有宽度，加上宽度就好了*/
 	text-align: center;
-	border-right: 1px solid #bdbdbd;
 }
-.user-con .user-item .user-content{
-	padding : 10px 0 10px 50px;
-	width: 308px;
-	height: 18px;
-	line-height: 18px;
-	font-size: 15px;
-	border: 1px solid #bdbdbd;
-	outline: none;
+.form-line .input{
+	height: 25px;
+	line-height: 25px;
+	width: 200px;
 }
-.user-con .btn-submit{
-	width: 100%;
-	padding: 6px;
-	text-align: center;
-	font-size: 20px;
-}
-
-/*跳转链接*/
-.user-con .link-item{
-	text-align: right;
-	margin-top: 10px;
-}
-.user-con .link-item-text{
-	/*text-align: right;*/
-	/*margin-top: 10px;*/
-
-	margin-bottom: 10px;
-	font-size: 14px;
-}
-.user-con .link-item .link{
-	margin-left: 10px;
-	color: #999;
-}
-
-

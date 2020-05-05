@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-03 11:04:48
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-03 11:34:14
+* @Last Modified time: 2020-05-05 16:52:47
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -31,7 +31,7 @@ var nav = {
 		});
 		//退出点击事件
 		$('.js-logout').click(function(){
-			_usre.logout(function(res){
+			_user.logout(function(res){
 				window.location.reload();
 			},function(errMsg){
 				_mm.errorTips(errMsg);

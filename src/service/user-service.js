@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 19:24:47
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 14:56:58
+* @Last Modified time: 2020-05-05 16:25:36
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -52,6 +52,15 @@ var _user = {
 		}); 
 	},
 
+	updatePassword : function(userInfo,resolve,reject){
+		_mm.request({
+			url     : _mm.getServerUrl('/user/reset_password.do'),
+			data    : userInfo,
+			method  : 'POST',
+			success : resolve,
+			error   : reject
+		}); 
+	},
 
 	//登出
 		logout : function(resolve,reject){
