@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 15:35:13
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 11:19:34
+* @Last Modified time: 2020-05-05 11:47:49
 * @Email:   1742759884@qq.com
 */
 /*css reset*/
@@ -49,7 +49,6 @@ input[type='checkbox']{
 	color: #666;
 	font-weight: bold;
 	border-bottom: 1px solid #eee;
-
 }
 .large .w{
 	width: 1600px;/*增大屏幕宽度*/

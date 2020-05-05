@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 17:38:52
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-03 09:26:02
+* @Last Modified time: 2020-05-05 14:30:17
 * @Email:   1742759884@qq.com
 */
 
@@ -11,13 +11,15 @@
  <html lang="en">
  	<head>
  		 <%= require('html-loader!./layout/head-common.html')%>
- 	<title>happymmall电商平台</title>
+ 	<title><%= htmlWebpackPlugin.options.title%>-happymmall电商平台</title>
  	
  </head>
 
     <!-- <script src="bundle.js" charset="utf-8"></script> -->
 
  <body>
+ 	<%= require('html-loader!./layout/nav.html')%>
+ 	 	<%= require('html-loader!./layout/header.html')%>
 
  	<div class="crumb">
  		<div class="w">
@@ -27,6 +29,22 @@
  				<span class="link-text">修改个人信息</span>
  			</div>
  		</div>
+ 	</div>
+
+ 	<div class="page-wrap w">
+ 		<%= require('html-loader!./layout/nav-side.html')%>
+		<div class="content with-nav">
+	 		<div class="panel">
+ 				<div class="panel-title">个人中心</div>
+ 				<div class="panel-body">
+ 					<div class="loading"></div>
+
+ 				</div>
+ 				</div>
+ 		</div>
+
+ 		</div>
+
  	</div>
  
  	<%= require('html-loader!./layout/footer.html')%>

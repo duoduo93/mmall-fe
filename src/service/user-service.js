@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 19:24:47
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 10:35:18
+* @Last Modified time: 2020-05-05 14:56:58
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -98,6 +98,26 @@ var _user = {
 			error   : reject
 		}); 
 	},
+	//获取用户信息
+	getUserInfo : function(resolve,reject){
+		_mm.request({
+			url     : _mm.getServerUrl('/user/get_information.do'),
+			method  : 'POST',
+			success : resolve,
+			error   : reject
+		}); 
+	},
+	//更新个人信息
+	updateUserInfo : function(userInfo,resolve,reject){
+		_mm.request({
+			url     : _mm.getServerUrl('/user/update_information.do'),
+			data    : userInfo,
+			method  : 'POST',
+			success : resolve,
+			error   : reject
+		}); 
+	}
+
 	
 
 }

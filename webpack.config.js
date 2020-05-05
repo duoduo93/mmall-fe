@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 10:23:03
+* @Last Modified time: 2020-05-05 15:27:07
 * @Email:   1742759884@qq.com
 */
 
@@ -44,6 +44,8 @@ var config = module.exports = {
 		'user-pass-reset'    : ['./src/page/user-pass-reset/reset.js'],
 		'user-center'        : ['./src/page/user-center/index.js'],
 		'user-center-update' : ['./src/page/user-center-update/index.js'],
+		'user-pass-update' : ['./src/page/user-pass-update/index.js']
+
 	},
 	output: {
 		path:path.resolve(__dirname,'dist'),
@@ -82,6 +84,7 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center','用户个人中心')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','个人信息更新')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
 		
 		
 		//清楚dist文件夹
