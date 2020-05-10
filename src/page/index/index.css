@@ -2,31 +2,102 @@
 * @Author: Wang XianPeng
 * @Date:   2020-04-08 19:55:29
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-04-23 16:22:51
+* @Last Modified time: 2020-05-06 11:43:41
 * @Email:   1742759884@qq.com
 */
-/*base.css*/
-body{
-	margin: 0;
-	padding: 0;
-	background: #ccc;
-
-}
-.box {
-	height: 400px;
-	width: 400px;
-	border: 5px solid #000;
-	color: #000;
-}
-.box div{
-	width: 100px;
-	height: 100px;
+/*keywords-list*/
+.keywords-list{
 	float: left;
+	width: 200px;
+	height: 350px;
+	padding: 10px 0;
+	margin-right: 10px;
+	background: #666;
+	color: #fff;
 }
-p{
-	color: red;
+.keywords-list .keywords-item{
+	padding-left: 10px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+}
+.keywords-list .keywords-item .link{
+	margin-right: 4px;
+	color: #fff;
+
+}
+.keywords-list .keywords-item:hover{
+background: #999;
+	
+}
+.keywords-list .keywords-item .link:hover{
+	color: #c60023;
+
+}
+.banner-con{
+	width: 860px;
+	float: left;
+	background: #eee;;
+	height: 370px;
 }
 
-html{
-	height: 100%;background: url("../../images/2.jpg");
+.banner-con .loading{
+	margin-top:130px;
 }
+
+
+/*floor*/
+.floor-wrap .floor-title{
+	height: 50px;
+	line-height: 50px;
+	color: #d58717;
+	font-weight: 20px;
+	border-bottom: 1px solid #d58717;
+}
+.floor-wrap .floor-list{
+	margin-right: -40px;
+	overflow: hidden;/*清除浮动*/
+}
+.floor-wrap:nth-child(2) .floor-list{
+	color: #3b838c;
+	border-bottom: 1px solid #3b838c;
+}
+.floor-wrap:nth-child(3) .floor-list{
+	color: #3b838c;
+	border-bottom: 1px solid #3b838c;
+}
+.floor-wrap:nth-child(4) .floor-list{
+	color: #3b838c;
+	border-bottom: 1px solid #3b838c;
+}
+.floor-wrap:nth-child(5) .floor-list{
+	color: #3b838c;
+	border-bottom: 1px solid #3b838c;
+}
+.floor-wrap .floor-list .floor-item{
+	position: relative;/*相对于父容器的定位*/
+	width: 200px;
+	height: 180px;
+	margin: 15px 20px 15px 0 ;
+	float: left;/*水平对齐*/
+	cursor: pointer;
+	background: #fff;
+}
+.floor-wrap .floor-list .floor-item .floor-text{
+	position: absolute;
+	top: 12px;
+	left: 20px;
+	font-size: 16px;
+	color: #555px;
+}
+.floor-wrap .floor-list .floor-item .floor-text{
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+	width: 80%;
+	height: 75%;
+	border: none;
+}
+
+
+
