@@ -2,15 +2,16 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-15 16:51:33
+* @Last Modified time: 2020-05-16 00:10:08
 * @Email:   1742759884@qq.com
 */
 'use strict';
 require('./index.css');
-require('page/common/nav/index.js');
 require('page/common/header/index.js');
-var _mm = require('util/mm.js');
-var _cart = require('service/cart-service.js');
+
+var nav           = require('page/common/nav/index.js');
+var _mm           = require('util/mm.js');
+var _cart         = require('service/cart-service.js');
 var templateIndex = require('./index.string');
 var page = {
 	data : {
@@ -141,10 +142,10 @@ var page = {
 
 		});
 		//提交购物车
-		$(document).on('click','btn-submit',function(){
+		$(document).on('click','.btn-submit',function(){
 			//总价大于0 提交
-			if (this.data.cartInfo && this.data.cartInfo.total > 0) {
-				window.location.href('./confirm.html');
+			if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
+				window.location.href = ('./confirm.html');
 			}
 			else{
 				_mm.errorTips('您还没有选择要提交的商品');
@@ -186,6 +187,8 @@ var page = {
 		//生成HTML
 		var cartHtml = _mm.renderHtml(templateIndex,data);
 		$('.page-wrap').html(cartHtml);
+		//刷新导航条上购物车的数量
+		nav.loadCartCount();
 	},
 	//数据匹配
 	filter: function(data){

@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-10 23:52:59
+* @Last Modified time: 2020-05-15 17:04:37
 * @Email:   1742759884@qq.com
 */
 
@@ -47,7 +47,8 @@ var config = module.exports = {
 		'user-pass-update'   : ['./src/page/user-pass-update/index.js'],
 		'list'               : ['./src/page/list/index.js'],
 		'detail'               : ['./src/page/detail/index.js'],
-		'cart'               : ['./src/page/cart/index.js']
+		'cart'               : ['./src/page/cart/index.js'],
+		'confirm'               : ['./src/page/confirm/index.js']
 
 
 	},
@@ -92,6 +93,7 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 		new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
+		new HtmlWebpackPlugin(getHtmlConfig('confirm','订单确认页面')),
 		
 		
 		//清楚dist文件夹
