@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-16 00:10:08
+* @Last Modified time: 2020-05-17 11:44:07
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -145,7 +145,7 @@ var page = {
 		$(document).on('click','.btn-submit',function(){
 			//总价大于0 提交
 			if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
-				window.location.href = ('./confirm.html');
+				window.location.href = ('./order-confirm.html');
 			}
 			else{
 				_mm.errorTips('您还没有选择要提交的商品');

@@ -1,0 +1,56 @@
+<table class="product-table">
+	<tr>
+		<th class="cell-img">&nbsp;</th>
+		<th class="product-info">商品描述</th>
+		<th class="product-price">价格</th>
+		<th class="product-count">数量</th>
+		<th class="product-total">小计</th>
+	</tr>
+	{{#orderItemVoList}}
+	<tr class="product-list">
+		<td class="cell-img">
+			<a href="./detail.html?productId={{productId}}" target="_blank">
+				<img  class="p-img" src="{{imageHost}}{{productImage}}" alt="{{productName}}">
+			</a>
+		</td>
+		<td class="product-info">
+			<a class="link" href="./detail.html?productId={{productId}}" target="_blank">{{productName}}</a>
+		</td>
+		<td class="product-price">￥{{currentUnitPrice}}</td>
+		<td class="product-count">{{quantity}}</td>
+		<td class="product-total">￥{{totalPrice}}</td>
+	</tr>
+	{{/orderItemVoList}}
+	
+<!-- 	<tr class="product-list">
+		<td class="cell-img">
+			<a href="./detail.html?productId=xxx" target="_blank">
+				<img  class="p-img" src="http://img.happymmall.com/241997c4-9e62-4824-b7f0-7425c3c28917.jpeg" alt="xxx">
+			</a>
+		</td>
+		<td class="product-info">
+			<a class="link" href="./detial.html?productId=xxx" target="_blank">苹果最新款手机</a>
+		</td>
+		<td class="product-price">￥111</td>
+		<td class="product-count">3</td>
+		<td class="product-total">￥333</td>
+	</tr>
+	<tr class="product-list">
+		<td class="cell-img">
+			<a href="./detail.html?productId=xxx" target="_blank">
+				<img  class="p-img" src="http://img.happymmall.com/241997c4-9e62-4824-b7f0-7425c3c28917.jpeg" alt="xxx">
+			</a>
+		</td>
+		<td class="product-info">
+			<a class="link" href="./detial.html?productId=xxx" target="_blank">苹果最新款手机</a>
+		</td>
+		<td class="product-price">￥111</td>
+		<td class="product-count">3</td>
+		<td class="product-total">￥333</td>
+	</tr> -->
+</table>
+<div class="submit-con">
+	<span>订单总价:</span>
+	<span class="submit-total">￥{{productTotalPrice}}</span>
+	<span class="btn order-submit">提交订单</span>
+</div>

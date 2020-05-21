@@ -1,0 +1,161 @@
+/*
+* @Author: Rosen
+* @Date:   2017-05-30 16:51:30
+* @Last Modified by:   Wang XianPeng
+* @Last Modified time: 2020-05-19 18:36:53
+*/
+
+ /*地址部分的样式*/
+ .panel{
+ 	overflow: hidden;
+ }
+ .address-item,
+ .address-add{
+ 	margin: 5px;
+ 	width: 300px;
+ 	height: 100px;
+ 	font-size: 13px;
+ 	padding: 5px;/*不太贴边*/
+ 	float: left;/*在一行中展示*/
+ 	border: 3px dashed #ccc;/*dashed--虚线*/
+ 	cursor: pointer;
+ }
+  .address-item.active{
+  	border: 3px dashed #c60023;
+  }
+.address-item:hover,
+.address-add:hover{
+	background: #eee;
+}
+  .address-add .address-new{
+		text-align: center;
+		color: #ccc;
+		font-size: 15px;
+  }
+.address-add .address-new .fa{
+	margin-top: 20px;
+	font-size: 50px;
+	line-height: 50px;
+}
+
+ .address-item .address-detail{
+ 	margin-top: 20px;
+ 	font-weight: bold;
+ 	font-size: 15px;
+  }
+ .address-item .address-opera{
+ 	margin-top: 10px; 
+ 	float: right;
+ 	visibility: hidden;
+ }
+  .address-item:hover .address-opera{
+ 	visibility: visible;
+ }
+ .product-table{
+ 	width: 100%;
+ 	height: 100%；
+ }
+ .product-table .p-img{
+ 	width: 80px;
+ 	height: 80px;
+ 	border: 1px solid #ccc;
+ 	padding: 10px;
+ }
+.product-table .cell-img{
+	width: 5%;
+}
+.product-table .product-list{
+  	text-align: center;
+}
+.submit-con{
+	background: #eee;
+	text-align: right;
+}
+.submit-con .submit-total{
+	font-size: 18px;
+	color: #c60023;
+	font-weight: bold;
+	margin-right: 20px;
+}
+.submit-con .order-submit{
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+
+}
+
+
+/*modal部分*/
+.modal{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;/*相对于屏幕的位置来指定位置，并且不会因为滚动而改变  用例：全屏覆盖*/
+	background: #eee;/*适配低版本的浏览器*/
+	background: rgba(0,0,0,.4);
+	z-index: 1000;/*堆叠层序 数值越高，越显示在屏幕前面*/
+	overflow-x: hidden;/*不能左右滚动*/
+	overflow-y: auto;/*上下自由滚动*/
+}
+.modal .modal-container{
+	width: 700px;
+	/*height: 500px;*/
+	margin: 50px auto;
+	background: #fff;
+	border-radius: 3px;/*加四周圆角*/
+}
+.modal .modal-container .modal-header{
+	position: relative;/*相对于父级元素定位*/
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.modal .modal-container .modal-header .modal-title{
+	font-size: 14px;
+}
+.modal .modal-container .modal-header .close{
+	position: absolute;/*绝对定位*/
+	padding: 10px;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;/*鼠标选中样式为手指样式*/
+}
+.modal .modal-container .modal-body{
+	padding: 15px;
+}
+
+/*form部分*/
+.form .form-line{
+	margin: 5px;
+	overflow: hidden;/*清除浮动*/
+}
+.form .form-line .label{
+	display: block;
+	float: left;/*float浮动*/
+	width: 80px;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.form .form-line .label .required{
+	color: red;
+}
+.form .form-line .form-item{
+	width: 300px;
+	padding: 0 5px;
+	height: 30px;
+	line-height: 30x;
+	outline: none;
+	margin-right: 10px;
+	text-align: left;
+}
+.form .form-line .btn{
+	margin-left: 90px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+	font-size: 13px;
+}

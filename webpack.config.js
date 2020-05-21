@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-15 17:04:37
+* @Last Modified time: 2020-05-17 11:41:40
 * @Email:   1742759884@qq.com
 */
 
@@ -46,9 +46,10 @@ var config = module.exports = {
 		'user-center-update' : ['./src/page/user-center-update/index.js'],
 		'user-pass-update'   : ['./src/page/user-pass-update/index.js'],
 		'list'               : ['./src/page/list/index.js'],
-		'detail'               : ['./src/page/detail/index.js'],
+		'detail'             : ['./src/page/detail/index.js'],
 		'cart'               : ['./src/page/cart/index.js'],
-		'confirm'               : ['./src/page/confirm/index.js']
+		'order-confirm'            : ['./src/page/order-confirm/index.js'],
+		'order-list'         : ['./src/page/order-list/index.js']
 
 
 	},
@@ -93,7 +94,9 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 		new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
-		new HtmlWebpackPlugin(getHtmlConfig('confirm','订单确认页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认页面')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+		
 		
 		
 		//清楚dist文件夹

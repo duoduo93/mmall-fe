@@ -1,0 +1,51 @@
+ <div class="modal close">
+    <div class="modal-container">
+        <div class="modal-header">
+          {{#isUpdate}}
+          <h1 class="modal-title">修改收货地址信息</h1>
+          {{/isUpdate}}
+          {{^isUpdate}}
+          <h1 class="modal-title">添加收货地址</h1>
+          {{/isUpdate}}
+          <i class="fa fa-close close"></i>
+        </div>
+        <div class="modal-body">
+          <!-- 一个输入框和一个提交按钮 -->
+          <div class="form">
+            <input class="shippingId" type="hidden" data-id="{{data.id}}" />
+              <div class="form-line">
+                  <label class="label" for="receiver-name"><span class="required">*</span>收件人姓名：</label><!-- for  代表默认选中-->
+                  <!-- value 属性为输入框的默认显示的内容，为空则显示placeholder属性中的提示信息 -->
+                  <input class="form-item" id="receiver-name" placeholder="请输入收件人的姓名" value="{{data.receiverName}}" />
+              </div>
+              <div class="form-line">
+                  <label class="label" for="receiver-province"><span class="required">*</span>所在城市：</label>
+                   <select class="form-item1 provinceTarget" id="receiver-province">
+                      <option data-index="-1" value="省份">省份</option>
+                  </select>
+                  <select class="form-item1 cityTarget" id="receiver-city">
+                      <option data-index="-1" value="城市">城市</option>
+                  </select>
+              </div>
+              <div class="form-line">
+                  <label class="label" for="receiver-address"><span class="required">*</span>详细地址：</label>
+                  <input class="form-item" id="receiver-address" placeholder="请输入收件人的详细地址，精确到门牌号" value="{{data.receiverAddress}}"/>
+
+              </div>
+              <div class="form-line">
+                  <label class="label" for="receiver-phone"><span class="required">*</span>联系方式：</label>
+                  <input class="form-item" id="receiver-phone" placeholder="请输入收件人的手机号"value="{{data.receiverPhone}}" />
+
+              </div>
+              <div class="form-line">
+                  <label class="label" for="receiver-zip">邮政编码：</label>
+                  <input class="form-item" id="receiver-zip" placeholder="如：000000" value="{{data.receiverZip}}"/>
+
+              </div>
+              <div class="form-line">
+                  <div class="btn  address-btn">保存收货地址</div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
