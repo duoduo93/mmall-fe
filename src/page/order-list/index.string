@@ -31,7 +31,7 @@
             <span class="order-text">
                 订单总价：<span class="order-total">{{payment}}</span>
             </span>
-            <a class="link order-detail" href="./order-detail.html?orderNo={{orderNo}}">查看详情</a>
+            <a class="link order-detail" href="./order-detail.html?orderNo={{orderNo}}" target="_blank">查看详情</a>
         </td>   
     </tr>
    

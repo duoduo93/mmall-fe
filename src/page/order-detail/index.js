@@ -1,8 +1,72 @@
 /*
 * @Author: Wang XianPeng
-* @Date:   2020-05-22 08:52:25
+* @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 08:52:25
+* @Last Modified time: 2020-05-22 18:54:26
 * @Email:   1742759884@qq.com
 */
 'use strict';
+//引入外部文件部分
+require('./index.css');
+require('page/common/header/index.js');
+require('page/common/nav/index.js');
+
+var navSide       = require('page/common/nav-side/index.js');/*侧边导航*/
+var _mm           = require('util/mm.js');
+var _order        = require('service/order-service.js');
+var templateIndex = require('./index.string');
+
+
+var page = {
+	data : {
+		orderNo : _mm.getUrlParam('orderNo')
+	},
+	init : function(){
+		this.onLoad();
+		this.bindEvent();
+	},
+	bindEvent : function(){
+		var _this = this;
+		//点击提交按钮后的动作
+		$(document).on('click','.cancel-btn',function(){
+			_this.cancelOrder();
+		});
+	},
+	onLoad : function(){
+		//初始化左侧菜单
+		navSide.init({
+			name : 'order-list'
+		});
+		this.loadDetail();
+	},
+	loadDetail : function(){
+		var  _this          = this,
+			orderDetailHtml = '',
+			$content        = $('.content');
+		$content.html('<div class="loading"></div>');
+		_order.getOrderDetail(_this.data.orderNo,function(res){
+			orderDetailHtml = _mm.renderHtml(templateIndex,res);
+			$content.html(orderDetailHtml);
+		},function(errMsg){
+			$content.html('<p class="err-tip">'+errMsg+'</p>')
+		});
+	},
+	//取消订单
+	cancelOrder : function(){
+		var _this = this,
+			orderNo = this.data.orderNo;
+		_order.cancelOrder(orderNo,function(res){
+			_mm.successTips(res);
+			_this.loadDetail();
+		},function(errMsg){
+			_mm.errorTips(errMsg);
+		});
+	}
+	
+};
+
+
+// 初始化页面
+$(function(){
+	page.init();
+});

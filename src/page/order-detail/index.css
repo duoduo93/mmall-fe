@@ -1,7 +1,76 @@
 /*
 * @Author: Wang XianPeng
-* @Date:   2020-05-22 08:52:35
+* @Date:   2020-05-16 10:21:13
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 08:52:35
+* @Last Modified time: 2020-05-22 11:05:27
 * @Email:   1742759884@qq.com
 */
+.product-table{
+	width: 100%;
+	height: 100%;
+	background: #fafafa;
+	border-collapse: collapse;/*为表格设置合并边框模型：*/
+	margin-bottom: 20px;
+}
+.product-table .cell{
+	padding: 10px 0;
+	color: #666;
+	border:1px solid #eee;
+}
+.product-table .order-info{/*不能在tr上面加样式，会导致有些样式不生效  改加在td上*/
+	background: #eee;
+	padding: 10px;
+	color: #999;
+}
+.product-table .order-info .order-text{
+	font-size: 13px;
+	margin-right: 25px;
+}
+.product-table .order-info .order-num{
+	font-weight: bold;
+}
+.product-table .order-info .order-total{
+	font-weight: bold;
+	color: #c60023;
+}
+.product-table .order-info .order-detail{
+	float: right;
+	overflow: hidden;
+}
+
+
+.product-table.header{
+	background: #ccc;
+
+}
+
+
+/*商品信息部分*/
+.p-img{
+	width: 80px;
+	height: 80px;
+}
+.product-table .cell-img{
+	width: 10%;
+	padding-left: 15px;
+	/*text-align: center;*/
+	/*margin: 0 auto;*/
+}
+.product-table .cell-info{
+	width: 60%;
+}
+.product-table .cell-price{
+	width: 10%;
+}
+.product-table .cell-count{
+	width: 10%;
+}
+.product-table .cell-total{
+	width: 10%;
+}
+
+/*商品信息文字部分*/
+.cell-text{
+	display: block;/*span标签默认为行内元素，此属性将span显示为块级元素  使得居中生效*/
+	text-align: center;
+}

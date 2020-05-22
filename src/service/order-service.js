@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-03 11:36:09
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 08:10:56
+* @Last Modified time: 2020-05-22 18:27:43
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -12,10 +12,10 @@ var _mm = require('util/mm.js');
 var _order = {
 
 	//获取订单列表
-	getOrderList : function(PageInfo,resolve,reject){
+	getOrderList : function(listParam,resolve,reject){
 		_mm.request({
 			url     : _mm.getServerUrl('/order/list.do'),
-			data    : PageInfo,
+			data    : listParam,
 			success : resolve,
 			error   :reject
 		});
@@ -29,6 +29,27 @@ var _order = {
 			error   :reject
 		});
 	},
+	getOrderDetail : function(orderNo,resolve,reject){
+		_mm.request({
+			url     : _mm.getServerUrl('/order/detail.do'),
+			data    : {
+				orderNo : orderNo
+			},
+			success : resolve,
+			error   :reject
+		});
+	},
+	cancelOrder : function(orderNo,resolve,reject){
+		_mm.request({
+			url     : _mm.getServerUrl('/order/cancel.do'),
+			data    : {
+				orderNo : orderNo
+			},
+			success : resolve,
+			error   :reject
+		});
+	}
+	
 	
 
 };
