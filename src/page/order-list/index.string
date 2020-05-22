@@ -9,70 +9,48 @@
 </table>
 <table class="order-list-table order-item">
     <!-- 商品基本信息 -->
+     {{#list}}
     <tr>
         <td colspan="5" class="order-info"><!--colspan td的宽度 代表5个默认td的宽度-->
             <span class="order-text">
                 <span>订单号：</span>
-                <a class="link" href="./order-detail.html?orderNumber=xxx"><span class="order-num">No1111111</span></a>
+                <a class="link" href="./order-detail.html?orderNumber=xxx"  target="_blank"><span class="order-num">{{orderNo}}</span></a>
             </span>
             <span class="order-text">
-                订单创建时间：2020-05-21
+                订单创建时间：{{createTime}}
             </span>
             <span class="order-text">
-                收件人:xxx
+                收件人:{{shippingVo.receiverName}}
             </span>
             <span class="order-text">
-                订单状态：xxx
+                支付方式：{{paymentTypeDesc}}
+            </span>
+             <span class="order-text">
+                支付状态：{{statusDesc}}
             </span>
             <span class="order-text">
-                订单总价：<span class="order-total"> xxx</span>
+                订单总价：<span class="order-total">{{payment}}</span>
             </span>
-            <span class="order-text">
-                订单创建时间：2020-05-21
-            </span>
-            <a class="link order-detail" href="./order-detail.html?orderNumber=xxx">查看详情</a>
+            <a class="link order-detail" href="./order-detail.html?orderNo={{orderNo}}">查看详情</a>
         </td>   
     </tr>
+   
 
     <!-- 商品信息 -->
+    {{#orderItemVoList}}
     <tr class="cell-item">
-        <td class="cell cell-img"><a href="./detail.html?productId=xxx" target="_blank">
-            <img class="p-img" src="http://img.happymmall.com/0093f5d3-bdb4-4fb0-bec5-5465dfd26363.jpeg" alt="">
+        <td class="cell cell-img"><a href="./detail.html?productId={{productId}}" target="_blank">
+            <img class="p-img" src="{{imageHost}}{{productImage}}" alt="{{productName}}">
         </a></td>
-        <td class="cell cell-info"><a class="link" href="./detail.html?productId=xxx" target="_blank"><span class="cell-text">xxx旗舰手机</span>
+        <td class="cell cell-info"><a class="link" href="./detail.html?productId={{productId}}" target="_blank"><span class="cell-text">{{productName}}</span>
         </a></td>
-        <td class="cell cell-price"><span class="cell-text">￥123</span></td>
-        <td class="cell cell-count"><span class="cell-text">2</span></td>
-        <td class="cell cell-total"><span class="cell-text">￥246</span></td>
+        <td class="cell cell-price"><span class="cell-text">￥{{currentUnitPrice}}</span></td>
+        <td class="cell cell-count"><span class="cell-text">{{quantity}}</span></td>
+        <td class="cell cell-total"><span class="cell-text">￥{{totalPrice}}</span></td>
     </tr>
-    <tr class="cell-item">
-        <td class="cell cell-img"><a href="./detail.html?productId=xxx" target="_blank">
-            <img class="p-img" src="http://img.happymmall.com/0093f5d3-bdb4-4fb0-bec5-5465dfd26363.jpeg" alt="">
-        </a></td>
-        <td class="cell cell-info"><a class="link" href="./detail.html?productId=xxx" target="_blank"><span class="cell-text">xxx旗舰手机</span>
-        </a></td>
-        <td class="cell cell-price"><span class="cell-text">￥123</span></td>
-        <td class="cell cell-count"><span class="cell-text">2</span></td>
-        <td class="cell cell-total"><span class="cell-text">￥246</span></td>
-    </tr>
-    <tr class="cell-item">
-        <td class="cell cell-img"><a href="./detail.html?productId=xxx" target="_blank">
-            <img class="p-img" src="http://img.happymmall.com/0093f5d3-bdb4-4fb0-bec5-5465dfd26363.jpeg" alt="">
-        </a></td>
-        <td class="cell cell-info"><a class="link" href="./detail.html?productId=xxx" target="_blank"><span class="cell-text">xxx旗舰手机</span>
-        </a></td>
-        <td class="cell cell-price"><span class="cell-text">￥123</span></td>
-        <td class="cell cell-count"><span class="cell-text">2</span></td>
-        <td class="cell cell-total"><span class="cell-text">￥246</span></td>
-    </tr>
-    <tr class="cell-item">
-        <td class="cell cell-img"><a href="./detail.html?productId=xxx" target="_blank">
-            <img class="p-img" src="http://img.happymmall.com/0093f5d3-bdb4-4fb0-bec5-5465dfd26363.jpeg" alt="">
-        </a></td>
-        <td class="cell cell-info"><a class="link" href="./detail.html?productId=xxx" target="_blank"><span class="cell-text">xxx旗舰手机</span>
-        </a></td>
-        <td class="cell cell-price"><span class="cell-text">￥123</span></td>
-        <td class="cell cell-count"><span class="cell-text">2</span></td>
-        <td class="cell cell-total"><span class="cell-text">￥246</span></td>
-    </tr>
+    {{/orderItemVoList}}
+     {{/list}}
+      {{^list}}
+        <p class="err-tip">您暂时还没有订单</p>
+       {{/list}}
 </table>

@@ -2,19 +2,20 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-03 11:36:09
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-19 11:37:46
+* @Last Modified time: 2020-05-22 08:10:56
 * @Email:   1742759884@qq.com
 */
 'use strict';
 
 var _mm = require('util/mm.js');
 
-var _cart = {
+var _order = {
 
-	//获取购物车数量
-	getOrderList : function(resolve,reject){
+	//获取订单列表
+	getOrderList : function(PageInfo,resolve,reject){
 		_mm.request({
-			url     : _mm.getServerUrl('/cart/get_cart_product_count.do'),
+			url     : _mm.getServerUrl('/order/list.do'),
+			data    : PageInfo,
 			success : resolve,
 			error   :reject
 		});
@@ -32,4 +33,4 @@ var _cart = {
 
 };
 
-module.exports = _cart;
+module.exports = _order;
