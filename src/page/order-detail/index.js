@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 18:54:26
+* @Last Modified time: 2020-05-23 12:24:47
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -30,6 +30,18 @@ var page = {
 		//点击提交按钮后的动作
 		$(document).on('click','.cancel-btn',function(){
 			_this.cancelOrder();
+		});
+		$(document).on('click','.pay-btn',function(){
+			var status = $('.pay-status').data('status'),
+				orderNo = _this.data.orderNo;
+			console.log(status);
+			if (status === 20) {
+				alert('您已支付过订单，请不要重复支付，稍后页面会跳转到订单页面');
+				window.location.href= "./order-list.html";
+			}else{
+				window.location.href= "./payment.html?orderNo="+orderNo;
+			}
+			
 		});
 	},
 	onLoad : function(){

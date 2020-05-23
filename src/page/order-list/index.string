@@ -14,7 +14,7 @@
         <td colspan="5" class="order-info"><!--colspan td的宽度 代表5个默认td的宽度-->
             <span class="order-text">
                 <span>订单号：</span>
-                <a class="link" href="./order-detail.html?orderNumber=xxx"  target="_blank"><span class="order-num">{{orderNo}}</span></a>
+                <a class="link" href="./order-detail.html?orderNo={{orderNo}}"  target="_blank"><span class="order-num">{{orderNo}}</span></a>
             </span>
             <span class="order-text">
                 订单创建时间：{{createTime}}

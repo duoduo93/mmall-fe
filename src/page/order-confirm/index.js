@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-21 00:17:35
+* @Last Modified time: 2020-05-23 09:11:29
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -45,7 +45,7 @@ var page = {
 				_order.createOrder({
 					shippingId : shippingId
 				},function(res){
-					window.location.href= ('./payment.html?orderNumber='+res.orderNo);
+					window.location.href= ('./payment.html?orderNo='+res.orderNo);
 				},function(errMsg){
 					_mm.errorTips(errMsg);
 				});

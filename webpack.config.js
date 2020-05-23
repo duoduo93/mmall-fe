@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 08:54:24
+* @Last Modified time: 2020-05-22 19:26:35
 * @Email:   1742759884@qq.com
 */
 
@@ -50,7 +50,8 @@ var config = module.exports = {
 		'cart'               : ['./src/page/cart/index.js'],
 		'order-confirm'            : ['./src/page/order-confirm/index.js'],
 		'order-list'         : ['./src/page/order-list/index.js'],
-		'order-detail'         : ['./src/page/order-detail/index.js']
+		'order-detail'         : ['./src/page/order-detail/index.js'],
+		'payment'         : ['./src/page/payment/index.js']
 
 
 	},
@@ -98,6 +99,7 @@ var config = module.exports = {
 		new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认页面')),
 		new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
 		new HtmlWebpackPlugin(getHtmlConfig('order-detail','订单详情页')),
+		new HtmlWebpackPlugin(getHtmlConfig('payment','支付页面')),
 		
 		
 		

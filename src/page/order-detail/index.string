@@ -18,9 +18,10 @@
             </div>
              <div class="text-line">
                 <span class="text">支付方式 ：{{paymentTypeDesc}}</span>
+                <span class="text pay-status" data-status = "{{status}}"></span>
             </div>
              <div class="text-line">
-                <a class="btn" href="./payment.html?orderNo={{orderNo}}">去支付</a>
+                <a class="btn pay-btn">去支付</a>
                 <a class="btn cancel-btn" >取消订单</a>
             </div>
         </div>
