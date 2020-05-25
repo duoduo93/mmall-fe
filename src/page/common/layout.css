@@ -1,11 +1,13 @@
-/*
+ /*
+ 通用页面布局
 * @Author: Wang XianPeng
 * @Date:   2020-04-23 15:35:13
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-05 11:47:49
+* @Last Modified time: 2020-05-25 21:28:53
 * @Email:   1742759884@qq.com
 */
 /*css reset*/
+
 *{
 	margin : 0;
 	padding: 0;
@@ -89,6 +91,7 @@ input[type='checkbox']{
 	cursor: pointer;
 	text-decoration: none;
 }
+/*继承自btn的属性，同时添加了自己的属性*/
 .btn-mini{
 	height: 25px;
 	line-height: 25px;
@@ -100,10 +103,10 @@ input[type='checkbox']{
 .loading{
 	margin: 10px auto;
 	display: block;/*宽和高的占位*/
-	width: 100px;
-	height: 100px;
+	width: 65px;
+	height: 65px;
 	border: 1px solid #ddd;
-	border-radius: 5px;
-	background: url(https://tse4-mm.cn.bing.net/th/id/OIP.1e3YVW946dgy5uJH764JXwHaFj?w=272&h=204&c=7&o=5&dpr=1.25&pid=1.7) no-repeat;
-	opacity: .6;
+	border-radius: 5px;/*圆角边框*/
+	background: url(../../image/icon/loading.gif) no-repeat;
+	opacity: .6;/*透明度*/
 }

@@ -1,0 +1,21 @@
+/*
+* @Author: Wang XianPeng
+* @Date:   2020-05-25 21:55:28
+* @Last Modified by:   Wang XianPeng
+* @Last Modified time: 2020-05-25 22:06:07
+* @Email:   1742759884@qq.com
+*/
+.links{
+	margin-top: 10px;
+	color: #666;
+	line-height: 30px;
+	text-align: center;
+}
+.links .link{
+	padding: 0 10px;
+}
+.copyright{
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}

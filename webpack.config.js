@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 19:26:35
+* @Last Modified time: 2020-05-25 20:22:18
 * @Email:   1742759884@qq.com
 */
 
@@ -16,6 +16,10 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //处理html模板
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+//环境变量的配置
+var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev';
+
 
 
 //获取html-webpack-plugin参数的方法
@@ -56,13 +60,17 @@ var config = module.exports = {
 
 	},
 	output: {
-		path:path.resolve(__dirname,'dist'),
+		path:path.resolve(__dirname,'dist/'),
 		filename: 'js/[name].[hash:8].js',
 		
 
 
 		// filename: 'bundle.js',
-		// publicPath : '/',
+		
+		// publicPath : '/dist/'
+		//线上环境和本地环境打包，开发的时候不要开启，开启会导致html 和css 的热更新失败
+		publicPath : 'dev' === WEBPACK_ENV ?'/dist/' :'//s.iwxp.fun/mmall-fe/dist/'
+
 		// chunkFilename: '[name].js'
 		// hash:true
 	},
@@ -76,6 +84,7 @@ var config = module.exports = {
 		inline : true,
 		hot : true,
 		port : 8080,
+		watchContentBase: true
 	},
 	plugins: [
 
@@ -104,7 +113,7 @@ var config = module.exports = {
 		
 		
 		//清楚dist文件夹
-		// new CleanWebpackPlugin(),
+		new CleanWebpackPlugin()
 				
 	],
 	module :{
@@ -130,7 +139,7 @@ var config = module.exports = {
 			},
 			{
 				test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
-				loader: 'file-loader?name=/dist/fonts/[name].[ext]',
+				loader: 'file-loader?name=fonts/[name].[ext]',
 			},
 			{ test: /\.string$/, loader:'html-loader'}
 
@@ -168,11 +177,16 @@ var config = module.exports = {
     		node_modules   : __dirname +"/node_modules",
     	}
     },
-    // watch = true
+   
 
 
 
 
 };
+
+if ('dev' === WEBPACK_ENV) {
+	config.entry.common.push('webpack-dev-server/client?http://localhost:8080/');	
+}
+
 
 module.exports = config;
