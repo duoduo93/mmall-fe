@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-16 10:21:13
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-21 14:33:16
+* @Last Modified time: 2020-05-30 12:57:48
 * @Email:   1742759884@qq.com
 */
 .order-list-table{
@@ -42,6 +42,15 @@
 .order-list-table.header{
 	background: #ccc;
 
+}
+.page-wrap{
+	display: flex;
+}
+.nav-side{
+	width: 6%;
+}
+.with-nav{
+	width: 94%;
 }
 
 

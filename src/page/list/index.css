@@ -1,0 +1,66 @@
+/*
+* @Author: Wang XianPeng
+* @Date:   2020-05-10 08:37:07
+* @Last Modified by:   Wang XianPeng
+* @Last Modified time: 2020-05-30 21:15:16
+* @Email:   1742759884@qq.com
+*/
+.sort-con{
+	overflow: auto;
+}
+.sort-con li{
+	float: left;
+	display: inline-block;
+	position: relative;
+	padding: 0 8px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	background: #fff;
+	color: #333;
+	cursor: pointer;
+}
+.sort-con li.active{
+	background: #c60023;
+	border: 1px solid #c60023;
+	color: #fff;
+}
+.sort-con .fa-sort-desc{
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+.p-item{
+	float: left;
+	position: relative;
+	width: 180px;
+	height: 284px;
+	padding: 10px;
+	margin: 10px 10px 0 10px;
+	background: #fff;
+
+}
+.p-item img{
+	width: 180px;
+	height: 200px;
+}
+.p-item a{
+	height: 20px;
+	line-height: 20px;
+	color: #666;
+	margin-bottom: 10px;
+}
+.p-item span{
+	color: #c7380d;
+	font-size: 16px;
+}
+.p-list-con{
+	overflow: hidden;
+	margin-top: 15px;
+	margin-right: -20px;
+}
+.pagination{
+	width: 100%;
+	height: 30px;
+}

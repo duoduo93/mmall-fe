@@ -1,0 +1,33 @@
+<div class="banner">
+    <ul>
+        <!-- <li>
+        	<a href="./list.html?categoryId=100021" target="_blank"></a>
+        	<img src="http://img.iwxp.fun/banner/banner1.jpg">
+        </li>
+        <li>
+        	<a href="./list.html?categoryId=100022" target="_blank"></a>
+        	<img src="http://img.iwxp.fun/banner/banner2.jpg">
+        </li> -->
+        <li>
+        	<a href="./list.html?categoryId=100023" target="_blank"></a>
+        	<img src="http://img.iwxp.fun/banner/banner3.jpg">
+        </li>
+        <li>
+        	<a href="./list.html?categoryId=100024" target="_blank"></a>
+        	<img src="http://img.iwxp.fun/banner/banner4.jpg">
+        </li>
+        <li>
+        	<a href="./list.html?categoryId=100025" target="_blank"></a>
+        	<img src="http://img.iwxp.fun/banner/banner5.jpg">
+        </li>
+    </ul>
+   <!--  <div class="banner-arrow prev">
+        <i class="fa fa-angle-left"></i>
+    </div>
+     <div class="banner-arrow prev">
+        <i class="fa fa-angle-left"></i>
+    </div>
+     <div class="banner-arrow next">
+        <i class="fa fa-angle-right"></i>
+    </div> -->
+</div>

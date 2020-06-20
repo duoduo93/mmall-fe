@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 17:38:52
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-25 21:47:49
+* @Last Modified time: 2020-06-01 02:36:39
 * @Email:   1742759884@qq.com
 */
 
@@ -11,225 +11,242 @@
  <html lang="en">
  	<head>
  		 <%= require('html-loader!./layout/head-common.html')%>
- 	<title>happymmall电商平台</title>
+ 	<title><%= htmlWebpackPlugin.options.title%> - smart电商平台</title>
  	
  </head>
-
  <body>
  	<%= require('html-loader!./layout/nav.html')%>
  	<%= require('html-loader!./layout/header.html')%>	
- 	<div class="w">
- 		<ul class="keywords-list">
- 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">手机</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">数码</a>
- 				
- 			</li>
+ 	<div class=" w">
+ 		 <ul class="keywords-list">
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=手机">手机</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=数码">数码</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=电脑">电脑</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=办公配件">办公配件</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=冰箱">冰箱</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=空调">空调</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=冰箱">热水器</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=洗衣机">洗衣机</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=厨卫">厨卫</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=小家电">小家电</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=家具">家具</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=家装">家装</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=化妆品">化妆品</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=个护">个护</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=清洁用品">清洁用品</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=纸品">纸品</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=母婴用品">母婴用品</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=儿童玩具">儿童玩具</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=图书">图书</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=电子书">电子书</a>
+ 		 	</li>
+ 		 	<li class="keywords-item">
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=旅行">旅行</a>
+ 		 		<a class="link" target="_blank" href="./list.html?keyword=机票">机票</a>
+ 		 	</li>
+ 		 </ul>
+ 		 <div class="banner-con">
+	 		<div class="loading"></div>
+	 	</div>
 
- 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">电脑</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">办公配件</a>
- 				
- 			</li>
- 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">电视</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">电冰箱</a>
- 				
- 			</li>
- 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">空调</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">洗衣机</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">厨卫</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">小家电</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">家具</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">家装</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">个护</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">化妆</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">母婴</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">儿童玩具</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">童装</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">童鞋</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">鞋靴</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">箱包</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">图书</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">音像</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">男装</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">女装</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">珠宝</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">黄金</a>
- 				
- 			</li>
- 			 			<li class="keywords-item">
- 				<a class="link" target="_blank" href="./list.html?keyword=手机">借钱</a>
- 				<a class="link" target="_blank" href="./list.html?keyword=数码">理财</a>
- 				
- 			</li>
- 		</ul>
- 		<div class="banner-con">
- 			<div class="loading">
- 				
- 			</div>
- 		</div>
  	</div>
  	<div class="w">
  		<div class="floor-wrap">
- 			<h1 class="floor-title">F1 家用电器</h1>
- 			<ul class="floor-list">
+ 			<h1 class="floor-title">F1家用电器</h1>
+ 			<ul class="floor-content">
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">双开门冰箱</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg"/></a>
+ 					<a class="link" href="./list.html?categoryId=100001">
+ 						<span>双开门冰箱</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor1-1.jpg" alt="双开门冰箱"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">洗衣机</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="洗衣机"/></a>
+ 					<a class="link" href="./list.html?categoryId=100002">
+ 						<span>电视</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor1-2.jpg" alt="电视"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">空调</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="空调"/></a>
+ 					<a class="link" href="./list.html?categoryId=100003">
+ 						<span>洗衣机</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor1-3.jpg" alt="洗衣机"/>
+ 					</a>
+ 				</li><li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100004">
+ 						<span>空调</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor1-4.jpg" alt="空调"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">电视</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="电视"/></a>
+ 					<a class="link" href="./list.html?categoryId=100005">
+ 						<span>热水器</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor1-5.jpg" alt="热水器"/>
+ 					</a>
+ 				</li>
+
+ 			</ul> 
+ 		</div>
+ 		<div class="floor-wrap">
+ 			<h1 class="floor-title">F2数码3C</h1>
+ 			<ul class="floor-content">
+ 				<li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100006">
+ 						<span>外星人笔记本</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor2-1.jpg" alt="外星人笔记本"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">热水器</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="热水器"/></a>
+ 					<a class="link" href="./list.html?categoryId=100007">
+ 						<span>iPhone7plus</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor2-2.jpg" alt="iPhone7plus"/>
+ 					</a>
  				</li>
+ 				<li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100008">
+ 						<span>iPad平板</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor2-3.jpg" alt="iPad平板"/>
+ 					</a>
+ 				</li><li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100009">
+ 						<span>佳能相机</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor2-4.jpg" alt="佳能相机"/>
+ 					</a>
+ 				</li>
+ 				<li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100010">
+ 						<span>插排</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor2-5.jpg" alt="插排"/>
+ 					</a>
+ 				</li>
+
  			</ul>
  		</div>
-
  		<div class="floor-wrap">
- 			<h1 class="floor-title">F2 母婴 童装</h1>
- 			<ul class="floor-list">
+ 			<h1 class="floor-title">F3服装箱包</h1>
+ 			<ul class="floor-content">
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">双开门冰箱</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg"/></a>
+ 					<a class="link" href="./list.html?categoryId=100011">
+ 						<span>气质裙子</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor3-1.jpg" alt="气质裙子"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">洗衣机</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="洗衣机"/></a>
+ 					<a class="link" href="./list.html?categoryId=100012">
+ 						<span>可爱帽子</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor3-2.jpg" alt="可爱帽子"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">空调</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="空调"/></a>
+ 					<a class="link" href="./list.html?categoryId=100013">
+ 						<span>大象箱包</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor3-3.jpg" alt="大象箱包"/>
+ 					</a>
+ 				</li><li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100014">
+ 						<span>香奈儿</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor3-4.jpg" alt="香奈儿"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">电视</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="电视"/></a>
+ 					<a class="link" href="./list.html?categoryId=100015">
+ 						<span>南极人</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor3-5.jpg" alt="南极人"/>
+ 					</a>
  				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">热水器</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="热水器"/></a>
- 				</li>
+
  			</ul>
  		</div>
-
  		<div class="floor-wrap">
- 			<h1 class="floor-title">F3 图书 音像</h1>
- 			<ul class="floor-list">
+ 			<h1 class="floor-title">F4休闲零食</h1>
+ 			<ul class="floor-content">
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">双开门冰箱</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg"/></a>
+ 					<a class="link" href="./list.html?categoryId=100016">
+ 						<span>三只松鼠坚果</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor4-1.jpg" alt="三只松鼠坚果"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">洗衣机</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="洗衣机"/></a>
+ 					<a class="link" href="./list.html?categoryId=100017">
+ 						<span>牛排</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor4-2.jpg" alt="牛排"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">空调</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="空调"/></a>
+ 					<a class="link" href="./list.html?categoryId=100018">
+ 						<span>龙利鱼</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor4-3.jpg" alt="龙利鱼"/>
+ 					</a>
+ 				</li><li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100019">
+ 						<span>湾仔码头水饺</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor4-4.jpg" alt="湾仔码头水饺"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">电视</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="电视"/></a>
+ 					<a class="link" href="./list.html?categoryId=100020">
+ 						<span>莫斯利安</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor4-5.jpg" alt="莫斯利安"/>
+ 					</a>
  				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">热水器</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="热水器"/></a>
- 				</li>
+
  			</ul>
  		</div>
-
  		<div class="floor-wrap">
- 			<h1 class="floor-title">F4 家装 家具</h1>
- 			<ul class="floor-list">
+ 			<h1 class="floor-title">F5酒水饮料</h1>
+ 			<ul class="floor-content">
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">双开门冰箱</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg"/></a>
+ 					<a class="link" href="./list.html?categoryId=100021">
+ 						<span>茅台</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor5-1.jpg" alt="茅台"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">洗衣机</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="洗衣机"/></a>
+ 					<a class="link" href="./list.html?categoryId=100022">
+ 						<span>长城红酒</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor5-2.jpg" alt="长城红酒"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">空调</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="空调"/></a>
+ 					<a class="link" href="./list.html?categoryId=100023">
+ 						<span>百事可乐</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor5-3.jpg" alt="百事可乐"/>
+ 					</a>
+ 				</li><li class="floor-item">
+ 					<a class="link" href="./list.html?categoryId=100024">
+ 						<span>rio鸡尾酒</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor5-4.jpg" alt="rio鸡尾酒"/>
+ 					</a>
  				</li>
  				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">电视</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="电视"/></a>
+ 					<a class="link" href="./list.html?categoryId=100025">
+ 						<span>白兰地</span>
+ 						<img class="floor-img" src="http://img.iwxp.fun/floor/floor5-5.jpg" alt="白兰地"/>
+ 					</a>
  				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">热水器</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="热水器"/></a>
- 				</li>
- 			</ul>
- 		</div>
 
- 		<div class="floor-wrap">
- 			<h1 class="floor-title">F5 生鲜 水果</h1>
- 			<ul class="floor-list">
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">双开门冰箱</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg"/></a>
- 				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">洗衣机</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="洗衣机"/></a>
- 				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">空调</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="空调"/></a>
- 				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">电视</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="电视"/></a>
- 				</li>
- 				<li class="floor-item">
- 					<a href="./list.html>categoryId="><span class="floor-text">热水器</span>
- 						<img  class= "floor-img"src="https://img14.360buyimg.com/n7/jfs/t4414/320/2147610942/144077/88abbc83/58ec7bc4Na9cf0ea9.jpg" alt="热水器"/></a>
- 				</li>
  			</ul>
  		</div>
  	</div>
-
+ 	
  
  	<%= require('html-loader!./layout/footer.html')%>
  </body>

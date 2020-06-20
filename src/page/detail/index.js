@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-10 22:32:58
+* @Last Modified time: 2020-05-30 22:11:18
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -29,7 +29,37 @@ var page = {
 		this.loadDetail();
 	},
 	bindEvent : function(){
-		var _this = this;
+		var _this   = this,
+			$pCount = 1;
+		//增加
+		$(document).on('click','.plus',function(){
+			//当前数量，然后+1
+			$pCount = parseInt($('.p-count').val())+1;
+			$('.p-count').val($pCount);
+
+		});
+		//减少
+		$(document).on('click','.minus',function(){
+			//当前数量，然后+1
+			if ($pCount>1) {
+				$pCount = $('.p-count').val()-1;
+			}
+			$('.p-count').val($pCount);
+
+		});
+		//加入到购物车
+		$(document).on('click','.cart-add',function(){
+			var productInfo = {
+				count     : $('.p-count').val(),
+				productId : _this.data.productId
+			};
+			_cart.addCart(productInfo,function(res){
+				 window.location.href = './result.html?type=cart-add';
+			},function(errMsg){
+				_mm.errorTips(errMsg);
+			});
+
+		});
 
 
 	},

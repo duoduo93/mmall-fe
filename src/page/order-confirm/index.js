@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-10 08:37:44
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-23 09:11:29
+* @Last Modified time: 2020-05-30 22:41:15
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -128,7 +128,7 @@ var page = {
 		var _this = this;//缓存当前对象，方便嵌套中调用父对象
 		$('.product-con').html('<div class="loading"></div>');
 		//获取地址列表
-		_product.getProductList(function(res){
+		_product.getProductList2(function(res){
 			var ProductHtml = _mm.renderHtml(templateProduct,res);
 			//放到html容器中
 			$('.product-con').html(ProductHtml);

@@ -2,7 +2,7 @@
 * @Author: Wang XianPeng
 * @Date:   2020-05-03 11:36:09
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-22 18:27:43
+* @Last Modified time: 2020-06-03 10:39:27
 * @Email:   1742759884@qq.com
 */
 'use strict';
@@ -14,7 +14,7 @@ var _order = {
 	//获取订单列表
 	getOrderList : function(listParam,resolve,reject){
 		_mm.request({
-			url     : _mm.getServerUrl('/order/list.do'),
+			url     : _mm.getServerUrl('/api/order/list.do'),
 			data    : listParam,
 			success : resolve,
 			error   :reject
@@ -23,7 +23,7 @@ var _order = {
 	//提交订单
 	createOrder : function(orderInfo,resolve,reject){
 		_mm.request({
-			url     : _mm.getServerUrl('/order/create.do'),
+			url     : _mm.getServerUrl('/api/order/create.do'),
 			data    : orderInfo,
 			success : resolve,
 			error   :reject
@@ -31,7 +31,7 @@ var _order = {
 	},
 	getOrderDetail : function(orderNo,resolve,reject){
 		_mm.request({
-			url     : _mm.getServerUrl('/order/detail.do'),
+			url     : _mm.getServerUrl('/api/order/detail.do'),
 			data    : {
 				orderNo : orderNo
 			},
@@ -41,7 +41,7 @@ var _order = {
 	},
 	cancelOrder : function(orderNo,resolve,reject){
 		_mm.request({
-			url     : _mm.getServerUrl('/order/cancel.do'),
+			url     : _mm.getServerUrl('/api/order/cancel.do'),
 			data    : {
 				orderNo : orderNo
 			},

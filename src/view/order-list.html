@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%= require('html-loader!./layout/head-common.html')  %>
-        <title><%= htmlWebpackPlugin.options.title%> - happymmall电商平台</title>
+      <title><%= htmlWebpackPlugin.options.title%> - smart电商平台</title>
     </head>
     <body>
         <%= require('html-loader!./layout/nav.html')  %>
@@ -20,22 +20,14 @@
         <div class="page-wrap w">
         	<%= require('html-loader!./layout/nav-side.html')%>
         	<div class="content with-nav">
-        		<div class="panel">
         			<div class="panel-title">
         				<%= htmlWebpackPlugin.options.title%>
         			</div>
-        		</div>
-        		<div class="panel-body">
-                    <!-- 表单 -->
-        			<div class="order-list-con">
-        				<!--  <div class="loading"></div> -->
-                       
-        			</div>
-                    <!-- 分页容器 -->
-        			<div class="pagination">
-        				 
-        			</div>
-        		</div>
+                    <div class="panel-body">
+                        <div class="order-list-con"></div>
+                        <!-- 分页容器 -->
+                        <div class="pagination"> </div>
+                    </div>
         	</div>
         </div>
         <%= require('html-loader!./layout/footer.html')  %>

@@ -2,7 +2,7 @@
 * @Author: WangXianPeng
 * @Date:   2020-04-08 16:45:10
 * @Last Modified by:   Wang XianPeng
-* @Last Modified time: 2020-05-25 20:22:18
+* @Last Modified time: 2020-06-01 02:16:03
 * @Email:   1742759884@qq.com
 */
 
@@ -23,10 +23,11 @@ var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev';
 
 
 //获取html-webpack-plugin参数的方法
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name,title){
 	return {
 			template : './src/view/'+name+'.html',
 			filename : 'view/'+name+'.html',
+			title    : title,
 			inject   : true,
 			hash     :true,
 			chunks   :[name,'commons']
@@ -69,7 +70,7 @@ var config = module.exports = {
 		
 		// publicPath : '/dist/'
 		//线上环境和本地环境打包，开发的时候不要开启，开启会导致html 和css 的热更新失败
-		publicPath : 'dev' === WEBPACK_ENV ?'/dist/' :'//s.iwxp.fun/mmall-fe/dist/'
+		publicPath : 'dev' === WEBPACK_ENV ?'/dist/' :'//shop.iwxp.fun/'
 
 		// chunkFilename: '[name].js'
 		// hash:true
@@ -112,6 +113,7 @@ var config = module.exports = {
 		
 		
 		
+		
 		//清楚dist文件夹
 		new CleanWebpackPlugin()
 				
@@ -126,21 +128,25 @@ var config = module.exports = {
 					use:"css-loader"
 				})
 			},
-			{   //图片打包
-				test :/\.(png|jpg|jpeg|gif)$/,
-				// loader :"style-loader!css-loader"//加载顺序从右往左
-				// loader: 'file-loader',
-				loader: 'url-loader',
-				options: {
-					name:'images/[name].[ext]',
-					limit: 50000
-				}
+			// {   //图片打包
+			// 	test :/\.(png|jpg|jpeg|gif)$/,
+			// 	// loader :"style-loader!css-loader"//加载顺序从右往左
+			// 	// loader: 'file-loader',
+			// 	loader: 'url-loader',
+			// 	options: {
+			// 		name:'images/[name].[ext]',
+			// 		limit: 50000
+			// 	}
 
-			},
-			{
-				test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
-				loader: 'file-loader?name=fonts/[name].[ext]',
-			},
+			// },
+
+			//图片打包
+			  { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
+			
+			// {
+			// 	test: /\.(svg|ttf|eot|woff|woff2)\??.*$/,
+			// 	loader: 'file-loader?name=fonts/[name].[ext]',
+			// },
 			{ test: /\.string$/, loader:'html-loader'}
 
 			// {
